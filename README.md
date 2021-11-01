@@ -1,8 +1,7 @@
 ![Logo](https://user-images.githubusercontent.com/70289587/139695761-1c01f0ec-43a1-4503-a43a-26a32d452151.png)
-img[src$="centerme"] {
-  display:block;
-  margin: 0 auto;
-}
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/70289587/139695761-1c01f0ec-43a1-4503-a43a-26a32d452151.png" alt="Sublime's custom image"/>
+</p>
 
 # Escola Frutos
 
