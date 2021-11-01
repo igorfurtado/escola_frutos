@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*Com o body tendo 100vh, as divs internas poderão se alinhar verticalmente no centro da página.*/
+    max-height: -webkit-fill-available;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-image: url(../assets/school-cover-blue.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}   
+
+
+@media screen and (min-width: 250px){
+    .cover-logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .cover-logo img{
+        width: 90px;
+    }
+    
+    .login-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 350px;
+        flex-direction: column;
+        text-align: center;
+        background-color: #292929;
+        color: #FFFFFF;
+        border-radius: 25px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+    }
+    
+    .login-box p{
+        font-size: 11px;
+    }
+
+    .login-box h1{
+        font-size: 1.5em;
+    }
+    
+    .radio-inputs{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+    #aluno, #professor{
+        cursor: pointer;
+    }
+    
+    .check-aluno{
+        margin-right: 20px;
+    }
+    
+    #btn-entrar{
+        width: 120px;
+        height: 40px;
+        background-color: #00B4D8;
+        border-radius: 7px;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        border-style: none;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+    
+    #btn-entrar:hover{
+        transform: scale(1.05);
+        background-color: #90E0EF;
+        color: #292929;
+    }
+    
+    #inputEmail, #inputSenha{
+        width: 240px;
+        height: 35px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        color: #292929;
+        border-style: none;
+        padding: 10px;
+    }
+    
+    #inputSenha{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 320px){
+    .login-box{
+        height: 350px;
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 340px){
+    .login-box{
+        height: 450px;
+        padding: 30px;
+    }
+    .login-box p{
+        font-size: 13px;
+    }
+
+    .acessar-sistema{
+        margin-top: 15px;
+    }
+    
+    #inputEmail, #inputSenha{
+        width: 270px;
+        height: 45px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    #btn-entrar{
+        width: 170px;
+    }
+
+    .radio-inputs{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .login-box{
+        width: 450px;
+        padding: 30px;
+    }
+    .login-box h1{
+        font-size: 2em;
+    }
+}

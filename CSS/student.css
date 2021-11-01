@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /*Com o body tendo 100vh, as divs internas poderão se alinhar verticalmente no centro da página.*/
+    max-height: -webkit-fill-available;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: #EDE8E8;
+    color: #595959;
+}  
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 300px){
+    .btn-out-position{
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .btn-out{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 35px;
+        background-color: #00B4D8;
+        color: #595959;
+        border: none;
+        border-radius: 7px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+        margin-right: 20px;
+        margin-top: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    
+    .btn-out:hover{
+        background-color: #FF8989;
+        font-weight: 700;
+        color: #000;
+    }
+    
+    .student-profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .student-profile span{
+        color: #00B4D8;
+    }
+    
+    .profile-elipse{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .profile-elipse img{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .actions-menu{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .actions-elipse{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 80px;
+       height: 80px;
+       border-radius: 50%; 
+       background-color: #595959;
+       margin-bottom: 10px;
+       transition: all 0.2s ease-out;
+       cursor: pointer;
+    }
+    
+    .actions-elipse:hover{
+        transform: scale(1.05);
+    }
+    
+    .action-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .action-center img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .action-center h3{
+        font-size: 12px;
+    }
+    
+    /* -------------------- Telas ocultas -------------------- */
+    
+    .modal{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 180, 216, 0.7);
+    }
+    
+    .students-grades, .students-absences, .students-ocurrences{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 70%;
+        background-color: #90E0EF;
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    
+    .students-grades{
+        z-index: 100;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+    }
+    
+    .students-absences{
+        z-index: 200;
+        width: 90%;
+        height: 350px;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+    }
+    
+    .students-ocurrences{
+        z-index: 300;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+    }
+
+    .students-ocurrences h1{
+        font-size: 20px;
+    }
+    
+    .board-field{
+        background-color: #EDE8E8;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+    
+    .close-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #595959;
+        color: #ffffff;
+        border-style: none;
+        transition: all 0.3s ease-out;
+    }
+    
+    .grades-board{
+        height: 70%;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+        text-align: center;
+        padding: 0 40px;
+        overflow: auto;
+    }
+
+    .grades-board h4{
+        font-size: 14px;
+    }
+    
+    .ocurrences-board{
+        height: 70%;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 3fr;
+        gap: 10px;
+        text-align: center;
+        padding: 0 40px;
+        overflow: auto;
+    }
+    
+    .close-btn:hover{
+        transform: scale(1.03);
+        background-color: #FF8989;
+    }
+    
+    .close-btn img{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .line-inputs{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .input-disciplinas, .quantidade-faltas{
+        width: 200px;
+        height: 40px;
+        background-color: #EDE8E8;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        padding: 10px;
+    }
+
+    .input-disciplinas{
+        margin-bottom: 10px;
+    }
+    
+    .margin-filds{
+        margin:0 40px;
+    }
+    
+    .margin-bottom-10{
+        margin-bottom: 10px;
+    }
+    
+    .margin-bottom-5{
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (min-width: 340px){
+    .input-disciplinas, .quantidade-faltas{
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .students-ocurrences h1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 500px){
+
+    .profile-elipse{
+        width: 200px;
+        height: 200px;
+    }
+
+    .actions-elipse{
+        width: 120px;
+        height: 120px;
+     }
+
+     .action-center{
+        margin-bottom: 80px;
+    }
+
+     .action-center img{
+        width: 80px;
+        height: 80px;
+     }
+
+     .action-center h3{
+         font-size: 1.2em;
+     }
+
+     .students-ocurrences h1{
+        font-size: 30px;
+    }
+
+    .board-field{
+        font-size: 1em;
+    }
+
+    .close-btn{
+        width: 50px;
+        height: 50px;
+    }
+
+    .grades-board h4{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 620px){
+    /* Telas ocultas */
+
+    .students-absences{
+        width: 600px;
+        height: 250px;
+    }
+
+    .input-disciplinas{
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagem/png" href="./assets/school-book.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Escola</title>
+</head>
+
+<body>
+    <div class="cover-logo">
+        <img src="./assets/escola-frutos.png">
+    </div>
+    <div class="login-box">
+        <h1>Sistema escolar</h1>
+        <p class="acessar-sistema">Acessar sistema</p>
+        <div class="radio-inputs">
+            <div class="check-aluno">
+                <input type="radio" id="radioAluno" value="aluno" name="status" checked>
+                <label for="aluno">Aluno</label>
+            </div>
+            <div class="check-professor">
+                <input type="radio" id="radioProfessor" name="status" value="professor">
+                <label for="professor">Professor</label>
+            </div>
+        </div>
+        <form method="post">
+            <input type="text" id="inputEmail" name="inputEmail" placeholder="E-mail"><br>
+            <input type="password" id="inputSenha" name="inputSenha" placeholder="Senha">
+        </form>
+        <button id="btn-entrar">ENTRAR</button>
+        <p>Aluno novo? Fale com um professor para realizar o seu cadastro.</p>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

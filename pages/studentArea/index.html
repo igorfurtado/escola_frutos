@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/school-book.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../CSS/student.css">
+    <title>Área do aluno</title>
+</head>
+
+<body>
+    <div class="btn-out-position">
+        <button class="btn-out" id="btnOut">SAIR</button>
+    </div>
+    <div class="student-profile">
+        <div class="profile-elipse">
+            <img src="../../assets/escola-frutos.png">
+        </div>
+        <h3>Aluno(a)</h3>
+        <h1>Olá, <span id="bemVindoAluno">ALUNO(A)!</span></h1>
+    </div>
+    <div class="actions-menu">
+        <div class="action-center" id="students-grades" onclick="mostraNotas()">
+            <div class="actions-elipse">
+                <img src="../../assets/test-white.png">
+            </div>
+            <h3>NOTAS</h3>
+        </div>
+        <div class="action-center" id="students-absences">
+            <div class="actions-elipse">
+                <img src="../../assets/presence-white.png" style="
+                margin-left: -7px;
+                margin-bottom: 5px;
+            ">
+            </div>
+            <h3>FALTAS</h3>
+        </div>
+        <div class="action-center" id="students-ocurrences" onclick="mostraOcorrências()">
+            <div class="actions-elipse">
+                <img src="../../assets/ocurrence-white.png">
+            </div>
+            <h3>OCORRÊNCIAS</h3>
+        </div>
+    </div>
+
+    <!-- Modals (telas ocultas) -->
+    <!-- Notas -->
+    <div class="modal">
+        <div class="students-grades">
+            <div class="line-inputs margin-filds">
+                <h1>NOTAS</h1>
+                <div>
+                    <button class="close-btn" id="close-btn-grades">
+                        <img src="../../assets/close-white.png">
+                    </button>
+                </div>
+            </div>
+            <div class="grades-board">
+                <h4>Discipinas</h4>
+                <h4>1º Bimestre</h4>
+                <h4>2º Bimestre</h4>
+                <h4>3º Bimestre</h4>
+                <h4>4º Bimestre</h4>
+                <h4>Total</h4>
+                <div class="board-field">Português</div>
+                <div class="board-field" id="portuguesPrimeiro"></div>
+                <div class="board-field" id="portuguesSegundo"></div>
+                <div class="board-field" id="portuguesTerceiro"></div>
+                <div class="board-field" id="portuguesQuarto"></div>
+                <div class="board-field" id="portuguesMedia"></div>
+                <div class="board-field">Matemática</div>
+                <div class="board-field" id="matematicaPrimeiro"></div>
+                <div class="board-field" id="matematicaSegundo"></div>
+                <div class="board-field" id="matematicaTerceiro"></div>
+                <div class="board-field" id="matematicaQuarto"></div>
+                <div class="board-field" id="matematicaMedia"></div>
+                <div class="board-field">Ciências</div>
+                <div class="board-field" id="cienciasPrimeiro"></div>
+                <div class="board-field" id="cienciasSegundo"></div>
+                <div class="board-field" id="cienciasTerceiro"></div>
+                <div class="board-field" id="cienciasQuarto"></div>
+                <div class="board-field" id="cienciasMedia"></div>
+                <div class="board-field">História</div>
+                <div class="board-field" id="historiaPrimeiro"></div>
+                <div class="board-field" id="historiaSegundo"></div>
+                <div class="board-field" id="historiaTerceiro"></div>
+                <div class="board-field" id="historiaQuarto"></div>
+                <div class="board-field" id="historiaMedia"></div>
+                <div class="board-field">Geografia</div>
+                <div class="board-field" id="geografiaPrimeiro"></div>
+                <div class="board-field" id="geografiaSegundo"></div>
+                <div class="board-field" id="geografiaTerceiro"></div>
+                <div class="board-field" id="geografiaQuarto"></div>
+                <div class="board-field" id="geografiaMedia"></div>
+                <div class="board-field">Inglês</div>
+                <div class="board-field" id="inglesPrimeiro"></div>
+                <div class="board-field" id="inglesSegundo"></div>
+                <div class="board-field" id="inglesTerceiro"></div>
+                <div class="board-field" id="inglesQuarto"></div>
+                <div class="board-field" id="inglesMedia"></div>
+                <div class="board-field">Ed. Física</div>
+                <div class="board-field" id="edFisicaPrimeiro"></div>
+                <div class="board-field" id="edFisicaSegundo"></div>
+                <div class="board-field" id="edFisicaTerceiro"></div>
+                <div class="board-field" id="edFisicaQuarto"></div>
+                <div class="board-field" id="edFisicaMedia"></div>
+            </div>
+        </div>
+
+        <!-- Faltas -->
+
+        <div class="students-absences">
+            <div class="line-inputs margin-filds">
+                <h1>FALTAS</h1>
+                <div>
+                    <button class="close-btn" id="close-btn-absences">
+                        <img src="../../assets/close-white.png">
+                    </button>
+                </div>
+            </div>
+            <div class="line-inputs margin-filds">
+                <div>
+                    <p class="margin-bottom-10">Disciplina:</p>
+                    <select class="input-disciplinas" id="faltasDisciplinas" onchange="checaFaltas()">
+                        <option value="portugues">Português</option>
+                        <option value="matematica">Matemática</option>
+                        <option value="ciencias" selected>Ciências</option>
+                        <option value="historia">História</option>
+                        <option value="geografia">Geografia</option>
+                        <option value="ingles">Inglês</option>
+                        <option value="edFisica">Ed. Física</option>
+                    </select>
+                </div>
+                <div>
+                    <p class="margin-bottom-10">Quantidade de faltas:</p>
+                    <div class="quantidade-faltas" id="faltasField"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ocorrências -->
+
+        <div class="students-ocurrences">
+            <div class="line-inputs margin-filds">
+                <h1>OCORRÊNCIAS</h1>
+                <div>
+                    <button class="close-btn" id="close-btn-ocurrences">
+                        <img src="../../assets/close-white.png">
+                    </button>
+                </div>
+            </div>
+            <div class="ocurrences-board">
+                <h4>Data</h4>
+                <h4>Classificação</h4>
+                <h4>Descrição</h4>
+                <div class="board-field" id="dataDaPrimeiraOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaPrimeiraOcorrencia"></div>
+                <div class="board-field" id="descricaoDaPrimeiraOcorrencia"></div>
+                <div class="board-field" id="dataDaSegundaOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaSegundaOcorrencia"></div>
+                <div class="board-field" id="descricaoDaSegundaOcorrencia"></div>
+                <div class="board-field" id="dataDaTerceiraOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaTerceiraOcorrencia"></div>
+                <div class="board-field" id="descricaoDaTerceiraOcorrencia"></div>
+                <div class="board-field" id="dataDaQuartaOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaQuartaOcorrencia"></div>
+                <div class="board-field" id="descricaoDaQuartaOcorrencia"></div>
+                <div class="board-field" id="dataDaQuintaOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaQuintaOcorrencia"></div>
+                <div class="board-field" id="descricaoDaQuintaOcorrencia"></div>
+                <div class="board-field" id="dataDaSextaOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaSextaOcorrencia"></div>
+                <div class="board-field" id="descricaoDaSextaOcorrencia"></div>
+                <div class="board-field" id="dataDaSetimaOcorrencia"></div>
+                <div class="board-field" id="classificacaoDaSetimaOcorrencia"></div>
+                <div class="board-field" id="dataDaSetimaOcorrencia"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/students.js"></script>
+    <script src="../../js/logout.js"></script>
+</body>
+
+</html>

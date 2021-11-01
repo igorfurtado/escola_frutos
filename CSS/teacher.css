@@ -1,0 +1,478 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /*Com o body tendo 100vh, as divs internas poderão se alinhar verticalmente no centro da página.*/
+    max-height: -webkit-fill-available;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: #EDE8E8;
+    color: #595959;
+}  
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+select, input{
+    font-family: 'Poppins', sans-serif;
+}
+
+select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url('../assets/arrow.jpg');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+}
+
+@media screen and (min-width: 300px){
+    .btn-out-position{
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .btn-out{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 35px;
+        background-color: #00B4D8;
+        color: #595959;
+        border: none;
+        border-radius: 7px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+        margin-right: 20px;
+        margin-top: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    
+    .btn-out:hover{
+        background-color: #FF8989;
+        font-weight: 700;
+        color: #000;
+    }
+    
+    .teacher-profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .teacher-profile h1{
+        font-size: 25px;
+    }
+    
+    .teacher-profile span{
+        color: #00B4D8;
+    }
+    
+    .profile-elipse{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #595959;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .profile-elipse img{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .actions-menu{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .actions-elipse{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 65px;
+       height: 65px;
+       border-radius: 50%; 
+       background-color: #ffffff;
+       border: 2px solid rgba(0,0,0,0.15);
+       margin-bottom: 10px;
+       transition: all 0.2s ease-out;
+       cursor: pointer;
+    }
+    
+    .actions-elipse:hover{
+        transform: scale(1.05);
+    }
+    
+    .action-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .action-center img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .action-center h3{
+        font-size: 12px;
+    }
+    
+    /* -------------------- Telas ocultas -------------------- */
+    
+    .modal{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 180, 216, 0.7);
+    }
+    
+    .ocurrences, .absences, .grades, .students{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: inherit;
+        width: 90%;
+        height: 500px;
+        background-color: #90E0EF;
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    
+    .ocurrences{
+        height: 560px;
+        z-index: 100;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+        overflow: auto;
+    }
+    
+    .absences{
+        height: 450px;
+        z-index: 200;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+    }
+    
+    .grades{
+        height: 90%;
+        z-index: 300;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+        overflow: auto;
+    }
+    
+    .students{
+        height: 90%;
+        z-index: 400;
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1s forwards ease-out;
+        overflow: auto;
+    }
+    
+    .line-inputs{
+        display: grid;
+        grid-template: 1fr/1fr;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 14px;
+    }
+
+    .line-inputs:first-child{
+        grid-template: 1fr/1fr 0fr;
+    }
+
+    .line-inputs-descadastrar{
+        display: grid;
+        grid-template: 1fr/1fr 0fr;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 14px;  
+    }
+
+    .line-inputs h1, .line-inputs-descadastrar{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .close-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #595959;
+        color: #ffffff;
+        border-style: none;
+        transition: all 0.3s ease-out;
+    }
+    
+    .close-btn:hover{
+        transform: scale(1.03);
+        background-color: #FF8989;
+    }
+    
+    .close-btn img{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .input-turma, .input-aluno, #registerBirthday, .input-ocorrencia, 
+    .input-descricao, #btnCadastrar, .btn-cadastrar, .btn-descadastrar, .input-faltas, 
+    .input-disciplinas, .input-nota, .input-bimestre,
+    .input-matricula, .input-novo-aluno, .input-telefone, .input-email,
+    .input-responsavel, .input-descadastrar-aluno, #pickDataOcorrencia{
+        width: 100%;
+        height: 30px;
+        background-color: #EDE8E8;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        padding: 5px;
+    }
+
+    .btn-cadastrar, #btnCadastrar{
+        width: 120px;
+    }
+
+    .btn-descadastrar{
+        width: 150px;
+    }
+    
+    .input-aluno, .input-ocorrencia, .input-disciplinas, 
+    .input-matricula, .input-telefone, .input-email{
+        width: 100%;
+    }
+    
+    .input-descricao{
+        width: 100%;
+        height: 80px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .input-novo-aluno, .input-responsavel, .input-descadastrar-aluno{
+        width: 100%;
+    }
+    
+    #btnCadastrar, .btn-cadastrar, .btn-descadastrar{
+        background-color: #595959;
+        color: #ffffff;
+        transition: all 0.3s ease-out;
+        margin-top: 15px;
+    }
+
+    #btnCadastrar{
+        margin-bottom: 10px;
+    }
+    
+    #btnCadastrar:hover, .btn-cadastrar:hover, .btn-descadastrar:hover{
+        background-color: #61E16E;
+        color: #595959;
+        font-weight: 700;
+        transform: scale(1.05);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-descadastrar:hover{
+        background-color: #FF8989;
+    }
+    
+    .cadastrar-align{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .margin-filds{
+        margin:10px 40px;
+    }
+    
+    .margin-bottom-10{
+        margin-bottom: 10px;
+    }
+    
+    .margin-bottom-5{
+        margin-bottom: 5px;
+    }
+
+    .margin-top-10{
+        margin-top: 10px;
+    }
+    
+    hr{
+        border: 1px solid #EDE8E8;
+    }
+
+    .description-small{
+        font-size: 14px;
+    }
+}
+
+/* iPhone 4/4s */
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3)
+{
+    .ocurrences{
+        height: 90%;
+    }
+}
+
+@media screen and (min-width: 340px){
+    .actions-elipse{
+        width: 80px;
+        height: 80px;
+     }
+
+     .action-center img{
+        width: 50px;
+        height: 50px;
+     }
+
+     .ocurrences{
+        height: 500px;
+    }
+
+    .absences{
+        height: 450px;
+    }
+
+    .grades{
+        height: 470px;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .teacher-profile h1{
+        font-size: 2em;
+    }
+
+    .line-inputs h1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 450px){
+
+    .margin-filds{
+        margin:0 40px;
+    }
+
+    .ocurrences, .absences, .grades, .students{
+        justify-content: space-evenly;
+    }
+
+    .line-inputs{
+        display: grid;
+        grid-template: 1fr/1fr 2fr;
+        gap: 10px;
+        font-size: 1em;
+    }
+
+    .input-turma, .input-aluno, #registerBirthday, .input-ocorrencia, 
+    .input-descricao, #btnCadastrar, .btn-cadastrar, .btn-descadastrar, .input-faltas, 
+    .input-disciplinas, .input-nota, .input-bimestre,
+    .input-matricula, .input-novo-aluno, .input-telefone, .input-email,
+    .input-responsavel, .input-descadastrar-aluno, #pickDataOcorrencia{
+        height: 40px;
+        padding: 10px;
+    }
+
+    .input-descricao{
+        height: 100px;
+    }
+    
+    .line-inputs h1, .line-inputs-descadastrar{
+        font-size: 2em;
+        margin-bottom: 0;
+    }
+
+    .description-small{
+        font-size: 1em;
+    }
+
+    .margin-top-10{
+        margin-top: 0px;
+    }
+
+    #btnCadastrar{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 570px){
+
+    .profile-elipse{
+        width: 200px;
+        height: 200px;
+    }
+
+    .actions-elipse{
+        width: 120px;
+        height: 120px;
+     }
+
+     .action-center{
+        margin-bottom: 80px;
+    }
+
+     .action-center img{
+        width: 80px;
+        height: 80px;
+     }
+
+     .action-center h3{
+         font-size: 1.2em;
+     }
+
+    .close-btn{
+        width: 50px;
+        height: 50px;
+    }
+
+    .action-center h3{
+        font-size: 1.2em;
+    }
+
+    .btn-cadastrar, #btnCadastrar, .btn-descadastrar{
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 820px){
+    .ocurrences, .absences, .grades, .students{
+        width: 800px;
+    }
+}
+
