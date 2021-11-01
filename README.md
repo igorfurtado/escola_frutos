@@ -1,5 +1,4 @@
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://user-images.githubusercontent.com/70289587/139695761-1c01f0ec-43a1-4503-a43a-26a32d452151.png)
 
 
 # Escola Frutos
