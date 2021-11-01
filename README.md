@@ -29,9 +29,10 @@ Controle acadêmico desenvolvido para acesso de alunos e professores da Escola F
 
 
 ## Styles
-<div style="display: inline-block";>
+<div style="display: inline-block; margin: 0 auto;">
   <img style="width:200px;" src="https://user-images.githubusercontent.com/70289587/139697938-747e75ae-2753-4bbb-810f-84de28199c6d.png" alt="Paleta de cores"/>
     <img style="width:200px;" src="https://user-images.githubusercontent.com/70289587/139697963-88ece69e-820a-49e7-8753-4aa399bdbea5.png" alt="Tipografia"/>
+      <img style="width:200px;" src="https://user-images.githubusercontent.com/70289587/139698643-48b8d132-5584-42bf-a035-585502dcfe4e.png" alt="Componentes"/>
 </div>
 
 
