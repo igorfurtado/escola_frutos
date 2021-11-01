@@ -22,15 +22,16 @@ Controle acadêmico desenvolvido para acesso de alunos e professores da Escola F
   <img src="https://user-images.githubusercontent.com/70289587/139697322-76cbea3b-5601-46f4-adec-aa36fb3e2dd0.png" alt="Login Escola Frutos"/>
 </div>
 <div style="display: inline-block";>
-  <img src="https://user-images.githubusercontent.com/70289587/139697602-5afae5b5-2491-4902-856e-07f72ca79d2f.png" alt="Área do professor"/>
+  <img src="https://user-images.githubusercontent.com/70289587/139698175-6b409fdb-acee-48d7-9341-8e146fd9e9e9.png" alt="Área do professor"/>
     <img src="https://user-images.githubusercontent.com/70289587/139697628-f2de9368-de0c-4ec8-9200-a6f53a71f695.png" alt="Área do aluno"/>
 </div>
 
 
+
 ## Styles
 <div style="display: inline-block";>
-  <img src="https://user-images.githubusercontent.com/70289587/139697938-747e75ae-2753-4bbb-810f-84de28199c6d.png" alt="Paleta de cores"/>
-    <img src="https://user-images.githubusercontent.com/70289587/139697963-88ece69e-820a-49e7-8753-4aa399bdbea5.png" alt="Tipografia"/>
+  <img width:200px src="https://user-images.githubusercontent.com/70289587/139697938-747e75ae-2753-4bbb-810f-84de28199c6d.png" alt="Paleta de cores"/>
+    <img width: 200px src="https://user-images.githubusercontent.com/70289587/139697963-88ece69e-820a-49e7-8753-4aa399bdbea5.png" alt="Tipografia"/>
 </div>
 
 
