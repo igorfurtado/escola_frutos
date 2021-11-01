@@ -18,7 +18,13 @@ Controle acadêmico desenvolvido para acesso de alunos e professores da Escola F
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/70289587/139697322-76cbea3b-5601-46f4-adec-aa36fb3e2dd0.png" alt="Login Escola Frutos"/>
+</div>
+<div style="display: inline-block";>
+  <img src="https://user-images.githubusercontent.com/70289587/139697602-5afae5b5-2491-4902-856e-07f72ca79d2f.png" alt="Área do professor"/>
+    <img src="https://user-images.githubusercontent.com/70289587/139697628-f2de9368-de0c-4ec8-9200-a6f53a71f695.png" alt="Área do aluno"/>
+</div>
 
 
 ## Tech Stack
